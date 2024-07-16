@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from 'react';
+import { fetchCustomers } from './asyncAction/customers';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch()
+  const users = useSelector(state => state)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = 'app'>
+      <button className='getUsersBtn' onClick={() => fetchCustomers()}>Получить пользователей</button>
+      {users.map((el,i) =>{
+        return(<h1 key={i}>{el.name}</h1>)
+      })}
     </div>
   );
 }
