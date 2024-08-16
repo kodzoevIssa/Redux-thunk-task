@@ -3,11 +3,18 @@
   padding-top: 30%;
 }
 
-.getUsersBtn{
+.getUsersBtn {
   font-size: 24px;
   border-radius: 20px;
   padding: 5px 10px;
-  background-color: #50009a;
-  color: #d5c5c5;
+  background-color: #8817f2;
+  color: #ffffff;
+  border: 1px solid #8817f2;
 }
 
+.getUsersBtn:active {
+  background-color: #ac55fd;
+  border: 1px solid #ac55fd;
+  transition: 0.1s ease-in-out;
+  transform: scale(0.98);
+}
